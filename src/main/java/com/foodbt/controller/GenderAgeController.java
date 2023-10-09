@@ -12,6 +12,14 @@ import org.springframework.web.bind.annotation.*;
 public class GenderAgeController {
     @Autowired
     private GenderAgeService genderAgeService;
+
+//    localhost:8080/api/GenderAge/user/1
+//    {
+//
+//        "gender": "MALE",
+//            "age": 30
+//    }
+
     @PostMapping("/user/{userId}")
     public ResponseEntity<?>createAgeAndGender(@PathVariable Long userId, @RequestBody GenderAgeDto genderAgeDto){
         GenderAgeDto genderAge = genderAgeService.createGenderAge(userId, genderAgeDto);

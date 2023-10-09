@@ -16,12 +16,11 @@ public class DinnerChoice {
 
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", referencedColumnName = "id")
-    private User user; // Assuming you have a User entity
-
+    private User user;
     @ElementCollection(targetClass = DinnerOption.class, fetch = FetchType.EAGER)
     @CollectionTable(name = "dinner_options", joinColumns = @JoinColumn(name = "dinner_choice_id"))
     @Enumerated(EnumType.STRING)
     private List<DinnerOption> dinnerOptions;
 
-    // Constructors, getters, setters, and other methods
+
 }

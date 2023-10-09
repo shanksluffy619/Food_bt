@@ -12,12 +12,23 @@ import org.springframework.web.bind.annotation.*;
 public class DinnerChoiceController {
     @Autowired
     private DinnerChoiceService dinnerChoiceService;
+
+
+
+    // localhost:8080/api/dinner/user/1
+
+    //        {
+//            "dinnerOptions":["CHAPATI","CHICKEN"]
+//        }
     @PostMapping("/user/{userId}")
     public ResponseEntity<?> DinnerChoiceForUser(@PathVariable long userId, @RequestBody DinnerChoiceDto dinnerChoiceDto){
         DinnerChoiceDto dinnerChoiceDto1 = dinnerChoiceService.creatDinnerChoiceForUser(userId, dinnerChoiceDto);
         ResponseEntity response = new ResponseEntity<>(dinnerChoiceDto1, HttpStatus.CREATED);
 
         return response;
+
+
+
     }
 
 }

@@ -22,18 +22,16 @@ public class OccupationEntity {
     @Column(nullable = false)
         private Occupation occupation;
     @Column
-    private String others; // Nullable field for specifying 'others' occupation
+    private String others; /
 
-    // Constructors, getters, setters, and other methods
 
-    // Additional logic to enforce the nullable constraint based on the enum
     @PrePersist
     @PreUpdate
     private void checkNullableConstraint() {
         if (occupation != null && occupation != Occupation.OTHER) {
             others = null;
 
-            // Constructors, getters, setters, and other methods
+
         }
     }
 }

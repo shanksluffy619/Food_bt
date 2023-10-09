@@ -21,16 +21,32 @@ public class BreakfastChoiceController {
     private UserService userService;
     @Autowired
     private BreakfastChoiceService breakfastChoiceService;
+
+    //localhost:8080/api/breakfast/user/1
+//    {
+//        "breakfastOptions": ["BIRYANI","PARATHA","MAGGI","TEA"]
+//    }
     @PostMapping("/user/{userId}")
     public ResponseEntity<BreakfastChoice> createBreakfastChoiceForUser(
             @PathVariable Long userId, @RequestBody BreakfastChoiceDto breakfastChoiceDto) {
         BreakfastChoice createdChoice = breakfastChoiceService.createBreakfastChoiceForUser(userId, breakfastChoiceDto);
         return new ResponseEntity<>(createdChoice, HttpStatus.CREATED);
+
+
+
+
     }
+
+
+    // localhost:8080/api/breakfast/user/1
     @GetMapping("/user/{userId}")
     public ResponseEntity<List<BreakfastChoiceDto>> getBreakfastChoicesByUserId(@PathVariable Long userId) {
         List<BreakfastChoiceDto> breakfastChoicesByUserId = breakfastChoiceService.getBreakfastChoicesByUserId(userId);
         return new ResponseEntity<>(breakfastChoicesByUserId, HttpStatus.OK);
+
+
+
+
     }
 
     }

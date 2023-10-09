@@ -17,14 +17,14 @@ public class FoodAllergy {
     @Column(nullable = false)
     private FoodAllergyStatus status;
 
-    @Column(length = 255) // Adjust the length as needed
+    @Column(length = 255)
     private String specification;
 
 
 
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", referencedColumnName = "id")
-    private User user; // Assuming you have a User entity
+    private User user;
 
-    // Add any other necessary fields, constructors, getters, setters, and associations.
+
 }

@@ -12,6 +12,10 @@ import org.springframework.web.bind.annotation.*;
 public class OccupationController {
 
     private final OccupationService occupationService;
+//    localhost:8080/api/occupation/user/1
+//    {
+//        "occupation":"FARMING_POULTRY"
+//    }
 
     @Autowired
     public OccupationController(OccupationService occupationService) {

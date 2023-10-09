@@ -29,7 +29,7 @@ public class GenderAgeServiceImpl implements GenderAgeService {
 
         GenderAge save = genderAgeRepository.save(genderAge);
 
-        // Set the user for the saved GenderAge
+
         save.setUser(user);
         genderAgeRepository.save(save);
 

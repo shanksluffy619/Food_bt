@@ -20,6 +20,13 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.validation.Valid;
 import java.util.Collections;
 
+
+//localhost:8080/api/foodbt/signup
+//{
+//        "email":"mike@gmail.com",
+//        "phoneNumber":"9879897306",
+//        "password":"mike"
+//        }
 @RestController
 @RequestMapping("/api/foodbt")
 public class AuthController {

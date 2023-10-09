@@ -22,6 +22,6 @@ public class MedicalConditionEntity {
     @Column(nullable = false)
     private MedicalCondition medicalCondition;
 
-    // Constructors, getters, setters, and other methods
+
 }
 

@@ -16,13 +16,21 @@ public class FoodAllergyController {
     private FoodAllergyService foodAllergyService;
 
     // Create a new Food Allergy
+    //  localhost:8080/api/foodallergies/user/1
+//    {
+//        "status": "YES",
+//            "specification": "Peanuts"
+//    }
     @PostMapping("/user/{userId}")
     public ResponseEntity<FoodAllergyDto> createFoodAllergy(@PathVariable Long userId ,@RequestBody FoodAllergyDto foodAllergyDto) {
         FoodAllergyDto createdFoodAllergy = foodAllergyService.createFoodAllergy(foodAllergyDto, userId);
         return new ResponseEntity<>(createdFoodAllergy, HttpStatus.CREATED);
+
+
     }
 
     // Get Food Allergies by User ID
+    //localhost:8080/api/foodallergies/user/1
     @GetMapping("/user/{userId}")
     public ResponseEntity<List<FoodAllergyDto>> getFoodAllergiesByUserId(@PathVariable Long userId) {
         List<FoodAllergyDto> foodAllergies = foodAllergyService.getFoodAllergiesByUserId(userId);

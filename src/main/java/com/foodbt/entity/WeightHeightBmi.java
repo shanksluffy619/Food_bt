@@ -24,7 +24,5 @@ public class WeightHeightBmi {
     private double currentHeight; // Current height in meters
 
     @Column(nullable = false)
-    private double bmi; // BMI (Body Mass Index) - You can calculate and set this value as needed
-
-    // Constructors, getters, setters, and other methods
+    private double bmi;
 }

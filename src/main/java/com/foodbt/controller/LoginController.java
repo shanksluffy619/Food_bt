@@ -29,7 +29,12 @@ private PasswordEncoder encoder;
     @Autowired
     private AuthenticationManager authenticationManager;
 
-
+//    localhost:8080/api/foodbt/Login
+//    {
+//        "emailOrPhoneNumber":"Asumaaa@gmail.com",
+//            "password":"mike"
+//
+//    }
 
 @PostMapping("/Login")
 public ResponseEntity<?>authenticateUser(@RequestBody LoginDto dto){

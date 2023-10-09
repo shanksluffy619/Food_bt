@@ -50,21 +50,20 @@ public class BreakfastChoiceServiceImpl implements BreakfastChoiceService {
 
     @Override
     public BreakfastChoice createBreakfastChoiceForUser(Long userId, BreakfastChoiceDto breakfastChoiceDto) {
-        // Convert the DTO to a BreakfastChoice entity
+
         BreakfastChoice breakfastChoice = new BreakfastChoice();
 
-        // Set the user by finding the User entity based on userId
+
         User user = userRepository.findById(userId)
                 .orElseThrow(() -> new ResourceNotFoundException("User","Id",userId));
 
         breakfastChoice.setUser(user);
 
-        // Set the breakfast options from the DTO
-        // Assuming you have a method to map BreakfastOption from BreakfastChoiceDto
+
         List<BreakfastOption> breakfastOptions = breakfastChoiceDto.getBreakfastOptions();
         breakfastChoice.setBreakfastOptions(breakfastOptions);
 
-        // Save the BreakfastChoice entity
+
         return breakfastChoiceRepository.save(breakfastChoice);
 
     }

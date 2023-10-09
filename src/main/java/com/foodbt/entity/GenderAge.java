@@ -24,5 +24,5 @@ public class GenderAge {
     @Column(nullable = false)
     private int age;
 
-    // Constructors, getters, setters, and other methods
+
 }

@@ -19,6 +19,12 @@ public class LunchChoiceController {
         @Autowired
         private LunchChoiceService lunchChoiceService;
 
+
+//        localhost:8080/api/lunch/user/1
+//        {
+//            "lunchOptions": ["RICE","DAL"]
+//        }
+
         @PostMapping("/user/{userId}")
         public ResponseEntity<?> createLunchChoice(@PathVariable Long userId, @RequestBody LunchChoiceDto lunchChoicedto) {
             LunchChoiceDto lunchChoice = lunchChoiceService.createLunchChoice(userId, lunchChoicedto);
